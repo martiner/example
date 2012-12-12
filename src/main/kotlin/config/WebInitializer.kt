@@ -19,7 +19,7 @@ public class WebInitializer: WebApplicationInitializer {
         ctx.register(javaClass<SpringWebConfig>())
         val servlet = sc.addServlet("appServlet", DispatcherServlet(ctx))!!
         servlet.setLoadOnStartup(1)
-        servlet.addMapping("*.go")
+        servlet.addMapping("/")
 
     }
 }
