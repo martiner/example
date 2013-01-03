@@ -13,11 +13,11 @@ public class WebInitializer: WebApplicationInitializer {
 
         val root = AnnotationConfigWebApplicationContext()
         root.register(javaClass<SpringConfig>())
-        sc.addListener(ContextLoaderListener(root));
+        sc.addListener(ContextLoaderListener(root))
 
         val ctx = AnnotationConfigWebApplicationContext()
         ctx.register(javaClass<SpringWebConfig>())
-        val servlet = sc.addServlet("appServlet", DispatcherServlet(ctx))!!
+        val servlet = sc.addServlet("kotlinServlet", DispatcherServlet(ctx))!!
         servlet.setLoadOnStartup(1)
         servlet.addMapping("/")
 
