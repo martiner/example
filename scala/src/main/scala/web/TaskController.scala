@@ -14,9 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam
 
 @Controller
 @RequestMapping(Array("/task"))
-class TaskController(
-                      @Autowired val dao: TaskDao
-                      ) {
+class TaskController @Autowired() (val dao: TaskDao) {
 
   @RequestMapping
   def list(model: Model): String = {
@@ -33,7 +31,7 @@ class TaskController(
       case true => "form"
       case false => {
         dao.save(task)
-        "redirect:task?edit=${task.id}"
+        "redirect:task?edit=" + task.id
       }
     }
   }
