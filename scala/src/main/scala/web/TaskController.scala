@@ -42,7 +42,7 @@ class TaskController(
   def model(@RequestParam(required = false) edit: Option[Int]): Option[Task] = {
     edit match {
       case Some(x) => dao.findById(x)
-      case None => Option(new Task(0, "", ""))
+      case None => Option(new Task)
     }
   }
 }
