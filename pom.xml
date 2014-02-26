@@ -18,6 +18,7 @@
 	<modules>
 		<module>kotlin</module>
 		<module>scala</module>
+        <module>java</module>
 	</modules>
 
 	<repositories>
