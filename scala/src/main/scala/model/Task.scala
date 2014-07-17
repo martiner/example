@@ -1,7 +1,7 @@
 package model
 
 import javax.validation.constraints.Size
-import reflect.BeanProperty
+import scala.beans.BeanProperty
 
 class Task {
   @BeanProperty
